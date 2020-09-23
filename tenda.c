@@ -13,3 +13,13 @@ void imprime ( Fila* f ){
 	}
 }
 
+void insere ( Fila* f ){
+	No* novoNo = (No*) malloc( sizeof( No ));
+	int ultimaSenha = (*(*f).fim).senha;
+	(*novoNo).senha = ++ultimaSenha;
+	(*(*f).fim).prox = novoNo;
+	(*f).fim = novoNo;
+}
+
+
+
