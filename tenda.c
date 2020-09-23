@@ -21,5 +21,11 @@ void insere ( Fila* f ){
 	(*f).fim = novoNo;
 }
 
+int retira ( Fila* f){
+	Fila* novoPrimeiroNo = (*(*f).ini).prox;
+	free ((*f).ini);
+	(*f).ini = novoPrimeiroNo;
+	return (*(*f).ini).prox;
+}
 
 
