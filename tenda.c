@@ -7,5 +7,9 @@ int conta ( Fila* f ) {
 }
 
 
-
+void imprime ( Fila* f ){
+	for ( No* nodePtr = (*f).ini; nodePtr != (*f).fim; nodePtr = (*nodePtr).prox ){
+		printf("%d\n", (*nodePtr).senha);
+	}
+}
 
