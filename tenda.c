@@ -1,5 +1,21 @@
+/*
+Iuri Correa de Salles Barbosa 19128
+Otto Jacometo 19143
+2INFD
+ */
+
 #include <stdlib.h>
 #include <stdio.h>
+
+typedef struct no {
+	int senha;
+	struct no* prox;
+} No;
+
+typedef struct fila {
+	    No* ini;
+	    No* fim;
+} Fila;
 
 Fila* cria() {
 	Fila* novaFila = (Fila*) malloc( sizeof(Fila) );
@@ -45,3 +61,13 @@ int vazia ( Fila* f ){
 	if ( &(*f).ini != &(*f).fim ) return 1;
 	return 0;
 } 
+
+void libera ( Fila* f ) {
+	No* auxPtr = (No*) malloc ( sizeof(No) );
+	No* nodePtr = (No*) malloc ( sizeof(No) );
+	for ( nodePtr = (*f).ini; nodePtr != (*f).fim; nodePtr = (*nodePtr).prox ){
+		auxPtr = (*nodePtr).prox;
+		free(nodePtr);
+		nodePtr = auxPtr;
+	}
+}

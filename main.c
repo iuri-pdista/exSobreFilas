@@ -1,6 +1,13 @@
+/*
+Iuri Correa de Salles Barbosa 19128
+Otto Jacometo 19143
+2INFD
+*/
+
+
 #include <stdio.h>
 #include <stdlib.h>
-#include "tenda.h"
+#include "tenda.c"
 
 /* Módulo para ilustrar utilização da fila */
 int main (void) {
@@ -11,7 +18,7 @@ int main (void) {
     char ch;
 
     do {
-        system("cls");
+        system("clear");
         printf("1. Obter bencao material\n");
         printf("2. Obter bencao espiritual\n");
         printf("3. Conceder bencao material\n");
@@ -27,7 +34,7 @@ int main (void) {
         printf("\n\n\n");
         printf("Escolha uma opcao : ");
         scanf("%d",&op);
-        clear();
+	system("clear");
         if(op>=0 && op<=6)
         {
             switch(op)
@@ -44,7 +51,7 @@ int main (void) {
 				printf("M%d",retira(fbm));
                 break;
             case 4:
-				printf("M%d",retira(fbE));
+				printf("M%d",retira(fbe));
                 break;
             case 5:
                 imprime(fbm);
@@ -70,7 +77,7 @@ int main (void) {
         }
 
         printf("\nPressione qq. tecla para continuar...");
-        getch();
+	getc();
     } while(1);
     return 0;
 }
