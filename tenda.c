@@ -1,3 +1,24 @@
+#include <stdlib.h>
+#include <stdio.h>
+
+typedef struct no {
+	    int senha;
+	        struct no* prox;
+} No;
+
+typedef struct fila {
+	    No* ini;
+	        No* fim;
+} Fila;
+
+Fila* cria() {
+	Fila* novaFila = (Fila*) malloc( sizeof(Fila) );
+	(*novaFila).ini = (No*) malloc( sizeof(No) );
+	(*(*novaFila).ini).senha = 1;
+	(*novaFila).fim = (*novaFila).ini;
+	return novaFila;
+}
+
 int conta ( Fila* f ) {
 	int count = 0;
 	for ( No* nodePtr = (*f).ini; nodePtr != (*f).fim; nodePtr = (*nodePtr).prox ) {
@@ -8,7 +29,8 @@ int conta ( Fila* f ) {
 
 
 void imprime ( Fila* f ){
-	for ( No* nodePtr = (*f).ini; nodePtr != (*f).fim; nodePtr = (*nodePtr).prox ){
+	No* nodePtr = (No*) malloc( sizeof(No));
+	for ( nodePtr = (*f).ini; nodePtr != (*f).fim; nodePtr = (*nodePtr).prox ){
 		printf("%d\n", (*nodePtr).senha);
 	}
 }
@@ -22,10 +44,14 @@ void insere ( Fila* f ){
 }
 
 int retira ( Fila* f){
-	Fila* novoPrimeiroNo = (*(*f).ini).prox;
+	No* novoPrimeiroNo = (No*) malloc( sizeof( No));
+	novoPrimeiroNo = (*(*f).ini).prox;
 	free ((*f).ini);
 	(*f).ini = novoPrimeiroNo;
-	return (*(*f).ini).prox;
+	return (*(*f).ini).senha;
 }
 
-
+int vazia ( Fila* f ){
+	if ( &(*f).ini != &(*f).fim ) return 1;
+	return 0;
+} 
