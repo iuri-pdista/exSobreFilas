@@ -1,16 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-typedef struct no {
-	    int senha;
-	        struct no* prox;
-} No;
-
-typedef struct fila {
-	    No* ini;
-	        No* fim;
-} Fila;
-
 Fila* cria() {
 	Fila* novaFila = (Fila*) malloc( sizeof(Fila) );
 	(*novaFila).ini = (No*) malloc( sizeof(No) );
