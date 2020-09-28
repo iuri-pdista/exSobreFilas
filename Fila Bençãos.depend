@@ -1,0 +1,30 @@
+# depslib dependency file v1.0
+1601231558 source:c:\users\otto\desktop\fila bençãos\funcoes.c
+	"tenda.h"
+	<string.h>
+	<stdlib.h>
+	<stdio.h>
+	<math.h>
+
+1601246018 c:\users\otto\desktop\fila bençãos\tenda.h
+
+1601254520 source:c:\users\otto\desktop\fila bençãos\main.c
+	<stdio.h>
+	<stdlib.h>
+	"tenda.h"
+
+1601231558 c:\users\otto\desktop\fila bençãos\funcoes.c
+	"tenda.h"
+	<string.h>
+	<stdlib.h>
+	<stdio.h>
+	<math.h>
+
+1601254084 source:c:\users\otto\desktop\fila bençãos\tenda.c
+	<stdio.h>
+	"tenda.h"
+
+1601232954 c:\users\otto\desktop\fila bençãos\tenda.c
+	<stdio.h>
+	"tenda.h"
+
